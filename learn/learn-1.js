@@ -20,7 +20,19 @@ class ShoppingList extends React.Component {
   }
 }
 
+
+/*
+Here, ShoppingList is a React component class, or React component type. 
+A component takes in parameters, called props (short for “properties”), and
+ returns a hierarchy of views to display via the render method.
+*/
+
+/*The <div /> syntax is transformed at build time to*/ React.createElement('div')
+
+//  The example above is equivalent to: //
 return React.createElement('div', {className: 'shopping-list'},
   React.createElement('h1', /* ... h1 children ... */),
   React.createElement('ul', /* ... ul children ... */)
 );
+
+

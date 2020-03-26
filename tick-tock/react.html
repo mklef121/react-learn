@@ -2,39 +2,60 @@
 <html>
 
 <head>
+  <link rel="stylesheet" type="text/css" href="react.css">
     <title>
         React learning
     </title>
 </head>
 
 <body>
-    <div id="errors" style="
-  background: #c00;
-  color: #fff;
-  display: none;
-  margin: -20px -20px 20px;
-  padding: 20px;
-  white-space: pre-wrap;
-"></div>
-    <div id="root"></div>
+   <div id="errors" style="
+      background: #c00;
+      color: #fff;
+      display: none;
+      margin: -20px -20px 20px;
+      padding: 20px;
+      white-space: pre-wrap;"
+      >
+      
+    </div>
+
+
+    <div id="root">
+    </div>
+
+    <div id="miminwa">
+      hello
+    </div>
 </body>
 <script>
+  {
+    var him ="here";
+    var Turn = "True";
+  }
+
+  console.log(him,Turn,"shee")
+// console.log("Hello", );
 window.addEventListener('mousedown', function(e) {
     document.body.classList.add('mouse-navigation');
     document.body.classList.remove('kbd-navigation');
 });
+
 window.addEventListener('keydown', function(e) {
     if (e.keyCode === 9) {
         document.body.classList.add('kbd-navigation');
         document.body.classList.remove('mouse-navigation');
     }
 });
+
 window.addEventListener('click', function(e) {
     if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
         e.preventDefault();
     }
 });
+
 window.onerror = function(message, source, line, col, error) {
+  console.log(arguments);
     var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';
     errors.textContent += text + '\n';
     errors.style.display = '';
@@ -47,5 +68,10 @@ console.error = (function(old) {
     }
 })(console.error);
 </script>
+<script type="text/javascript" src="/react.development.js"></script>
+<script type="text/javascript" src="/react-dom.development.js"></script>
+<script src="/babel.min.js"></script>
+<script src="react.tsx" type="text/babel"></script>
+
 
 </html>
